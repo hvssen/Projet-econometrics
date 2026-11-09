@@ -1,0 +1,123 @@
+{
+  "models": [
+    {
+      "model": "M1",
+      "n": 597,
+      "coef": 0.006651101974472553,
+      "se": 0.002462236580946504,
+      "adjusted_R2": 0.009034783612890895,
+      "RMSE_usd": 4.619103003781651
+    },
+    {
+      "model": "M2",
+      "n": 597,
+      "coef": 0.005477996389140102,
+      "se": 0.0026498435237817942,
+      "adjusted_R2": 0.01986935318333516,
+      "RMSE_usd": 4.5377692141512
+    },
+    {
+      "model": "M3",
+      "n": 597,
+      "coef": 0.00561692182042101,
+      "se": 0.002637441875315521,
+      "adjusted_R2": 0.021818112226068664,
+      "RMSE_usd": 4.600902451389391
+    },
+    {
+      "model": "M4",
+      "n": 597,
+      "coef": 0.0058408981526096825,
+      "se": 0.00234136975082756,
+      "adjusted_R2": 0.22569647631275402,
+      "RMSE_usd": 3.9126423970012363
+    },
+    {
+      "model": "M5",
+      "n": 597,
+      "coef": 0.006994420045976954,
+      "se": 0.0028601522041974653,
+      "adjusted_R2": 0.2251406375155346,
+      "RMSE_usd": 3.9172044905302155
+    }
+  ],
+  "tests": [
+    {
+      "id": "T1",
+      "model": "M4",
+      "null": "Competition coefficient = 0",
+      "statistic": "t",
+      "value": 2.494650044293606,
+      "p": 0.012883326388674973
+    },
+    {
+      "id": "T2",
+      "model": "M4",
+      "null": "All 11 controls = 0",
+      "statistic": "F",
+      "value": 22.444099307473838,
+      "p": 2.1109798625398158e-38
+    },
+    {
+      "id": "T3",
+      "model": "M4",
+      "null": "All 12 slopes = 0",
+      "statistic": "F",
+      "value": 22.067560436976848,
+      "p": 2.1718778215311027e-40
+    },
+    {
+      "id": "T4",
+      "model": "M5",
+      "null": "Chain slope difference = 0",
+      "statistic": "F",
+      "value": 0.5716097484629479,
+      "p": 0.4499253277883418
+    }
+  ],
+  "groups": [
+    {
+      "group": "Other or unclassified",
+      "percent": 0.7018938131796201,
+      "low": 0.13779112195082424,
+      "high": 1.269174244227582,
+      "p": 0.014761026084759243
+    },
+    {
+      "group": "Identified chain",
+      "percent": 0.3000401958395288,
+      "low": -0.5806299188860108,
+      "high": 1.1885114045605132,
+      "p": 0.5049108037665586
+    }
+  ],
+  "diagnostics": {
+    "BP_stat": 47.69648417136467,
+    "BP_p": 3.5295861153043163e-06,
+    "RESET_F": 5.194341969178555,
+    "RESET_p": 0.005807953930823321
+  },
+  "size_check": {
+    "n": 111,
+    "percent": 0.4002630581730026,
+    "low": -0.10427201031027081,
+    "high": 0.9073463400829371,
+    "p": 0.11883537317063017
+  },
+  "formulas": {
+    "M1": "log_price ~ competition_2km",
+    "M2": "log_price ~ competition_2km + east10 + north10 + I(east10 ** 2) + I(north10 ** 2) + east10:north10",
+    "M3": "log_price ~ competition_2km + east10 + north10 + I(east10 ** 2) + I(north10 ** 2) + east10:north10 + chain",
+    "M4": "log_price ~ competition_2km + east10 + north10 + I(east10 ** 2) + I(north10 ** 2) + east10:north10 + chain + diameter_filled + diameter_missing + diameter_known_share + small_share + large_share",
+    "M5": "log_price ~ competition_2km + east10 + north10 + I(east10 ** 2) + I(north10 ** 2) + east10:north10 + chain + diameter_filled + diameter_missing + diameter_known_share + small_share + large_share + competition_2km:chain"
+  },
+  "main": {
+    "percent": 0.5857989458212829,
+    "low": 0.12431395205172831,
+    "high": 1.0494109793783606,
+    "p": 0.012883326388674973
+  },
+  "mean_price": 14.85001862533169,
+  "mean_competition": 5.172529313232831,
+  "known_size_share": 0.2119043842130805
+}

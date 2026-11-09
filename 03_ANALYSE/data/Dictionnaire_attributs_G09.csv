@@ -1,0 +1,51 @@
+﻿attribut,description,valeurs_manquantes,type
+id,Identifiant unique de la fiche dans le fichier restaurants,0,int64
+position,Champ position original de la source ; non utilisé en régression,0,int64
+name,Nom de la fiche Uber Eats,0,object
+score,Note moyenne observée ; manquante si indisponible,253,float64
+ratings,Nombre d'avis observé ; ce n'est pas une fréquentation,253,float64
+category,Catégories du restaurant dans la source,1,object
+price_range,Catégorie de prix déclarée dans la source ; non utilisée comme prix des pizzas,106,object
+full_address,Adresse complète,4,object
+zip_code,Code postal original,4,object
+lat,Latitude en degrés,0,float64
+lng,Longitude en degrés,0,float64
+distance_center,Distance au centre d'étude de Houston en kilomètres,0,float64
+name_key,Nom normalisé pour repérer les doublons,0,object
+site,Identifiant du site construit avec latitude et longitude arrondies à 4 décimales,0,object
+brand,Enseigne reconnue par règles sur les noms ; sinon Other or unclassified,0,object
+chain,"1 si enseigne identifiée ; 0 sinon, sans garantie d'indépendance",0,int64
+convenience,"1 si le nom correspond aux règles 7-Eleven, Stripes ou PJ Fresh",0,int64
+site_listings,Nombre de fiches du même site dans l'univers des fournisseurs retenus,0,int64
+x_km,"Coordonnée est-ouest approchée par rapport au centre de Houston, en km",0,float64
+y_km,"Coordonnée nord-sud approchée par rapport au centre de Houston, en km",0,float64
+quadrant,"Quadrant géographique NE, NW, SE ou SW autour du centre",0,object
+grid10,Identifiant de cellule de grille de 10 km,0,object
+zip_clean,Code postal à 5 chiffres extrait ; Unknown si absent,0,object
+competition_1km,Nombre d'autres sites de pizzas observés à 1 km ; site propre exclu,0,int64
+competition_2km,Nombre d'autres sites de pizzas observés à 2 km ; variable principale,0,int64
+competition_3km,Nombre d'autres sites de pizzas observés à 3 km ; site propre exclu,0,int64
+competition_5km,Nombre d'autres sites de pizzas observés à 5 km ; site propre exclu,0,int64
+competition_listings_2km,"Nombre d'autres fiches à 2 km, excluant seulement la fiche propre ; variante de sensibilité",0,int64
+competition_otherbrand_2km,Nombre d'autres sites à 2 km en excluant l'enseigne propre lorsqu'elle est identifiée,0,int64
+competition_nonconvenience_2km,Nombre d'autres sites à 2 km hors fournisseurs classés convenience,0,int64
+average_pizza_price,"Moyenne non pondérée des prix des offres de pizzas entières retenues, en USD",0,float64
+median_pizza_price,"Médiane des mêmes offres, en USD",0,float64
+n_pizzas,Nombre d'offres de pizzas retenues ; pas un volume de ventes,0,float64
+min_price,"Prix minimum des offres retenues, en USD",0,float64
+max_price,"Prix maximum des offres retenues, en USD",0,float64
+diameter_mean,"Diamètre moyen connu parmi les offres retenues, en pouces ; manquant si aucun",403,float64
+diameter_known_share,"Part des offres retenues avec un diamètre connu, entre 0 et 1",0,float64
+small_share,"Part des offres retenues avec une indication textuelle small, entre 0 et 1",0,float64
+large_share,"Part des offres retenues avec une indication textuelle large, entre 0 et 1",0,float64
+zero_price_share,"Part des lignes de catégorie pizza avec un prix égal à zéro, avant sélection des offres éligibles",0,float64
+has_price,1 si un prix moyen éligible est disponible ; toujours 1 dans ce dataset final,0,int64
+diameter_missing,1 si tous les diamètres des offres retenues sont inconnus,0,int64
+diameter_filled,diameter_mean moins 12 ; vaut 0 si diamètre moyen inconnu ; utiliser avec diameter_missing,0,float64
+score_missing,1 si la note est manquante,0,int64
+score_filled,"score moins 4,5 ; vaut 0 si note inconnue ; utiliser avec score_missing",0,float64
+log_price,Logarithme naturel de average_pizza_price ; variable dépendante des modèles principaux,0,float64
+log_n_pizzas,Logarithme naturel de 1 + nombre d'offres retenues,0,float64
+east10,x_km divisé par 10 ; terme géographique utilisé dans les régressions,0,float64
+north10,y_km divisé par 10 ; terme géographique utilisé dans les régressions,0,float64
+log_reviews,Logarithme naturel de 1 + nombre d'avis ; compte manquant remplacé par zéro pour cette transformation,0,float64

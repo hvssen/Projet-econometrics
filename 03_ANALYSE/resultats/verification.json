@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "observations": 597,
+  "dataset_attributes": 50,
+  "models": 5,
+  "tests": 4,
+  "report_pages": 4,
+  "presentation_main_slides": 13,
+  "presentation_appendix_slides": 2,
+  "unchanged_dataset": true,
+  "existing_model_estimates_reproduced": true,
+  "interaction_renumbering": "M5 replaces previous M6; formula unchanged"
+}
